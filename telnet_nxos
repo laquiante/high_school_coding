@@ -1,11 +1,15 @@
 import telnetlib
 import time
 
+# fuer die PVLAN Demo brauche ich die 10.0.1.200 auf dieser Maschine
 switch = '10.0.1.2'
 port = '23'
+
+# NX-OS fuer das Labor: no password strength-check
 user = 'admin'
 password = 'admin' 
 
+# NX-OS fuer das Labor: feature telnet
 tn = telnetlib.Telnet(host=switch, port=port)
 
 tn.read_until(b'login: ')
